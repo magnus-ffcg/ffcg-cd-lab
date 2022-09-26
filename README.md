@@ -1,6 +1,6 @@
 # ffcg-cd-lab
 
-Test av två olika deployment strategier
+Test of two different deployment strategies
 
 # Requirements 
 
@@ -53,7 +53,6 @@ helm install grafana grafana/grafana \
     --set=adminUser=admin \
     --set=adminPassword=admin \
     --set=service.type=NodePort
-    
 ```
 
 Access grafana:
