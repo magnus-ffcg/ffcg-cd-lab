@@ -30,39 +30,8 @@ minikube start --kubernetes-version=v1.23.3 \
 minikube kubectl -- get po -A
 ```
 
-## 3. Install prometheus & grafana (monitoring)
 
-Install tools inside the cluster with helm
-
-
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-
-helm repo update
-helm install monitoring prometheus-community/kube-prometheus-stack
-```
-
-Access grafana:
-
-    minikube service monitoring-grafana
-
-Login with admin / prom-operator
-
-Add datasource under settings (bottom left):
-
-    Name: prometheus
-    Type: Prometheus
-    Url: http://prometheus-server
-    Access: Server
-
-Create a new dashboard (top left) with a graph 
-with this query:
-
-    sum(rate(http_requests_total{app="my-app"}[5m])) by (version)
-
-Save it and close the tunnel (ctrl-c in terminal)
-
-5. Prep later deployments
+## 3. Prep later deployments
 
 Open a new terminal window, write 
 
@@ -92,7 +61,38 @@ When it show "successfully rolled out" its ok.
 
 7. Open up deployment2/README.md and go through it.
 
-8. Time to check the dashboard again:
+## SKIP Install prometheus & grafana (monitoring)
+
+Install tools inside the cluster with helm
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo update
+helm install monitoring prometheus-community/kube-prometheus-stack
+```
+
+Access grafana:
+
+    minikube service monitoring-grafana
+
+Login with admin / prom-operator
+
+Add datasource under settings (bottom left):
+
+    Name: prometheus
+    Type: Prometheus
+    Url: http://prometheus-server
+    Access: Server
+
+Create a new dashboard (top left) with a graph 
+with this query:
+
+    sum(rate(http_requests_total{app="my-app"}[5m])) by (version)
+
+Save it and close the tunnel (ctrl-c in terminal)
+
+Time to check the dashboard again:
 
     minikube service grafana
 
