@@ -57,9 +57,13 @@ Wait for nginx to be running:
 
 When it show "successfully rolled out" its ok.
 
-6. Open up deployment1/README.md and go through it.
+## 4. Do deployment 1
 
-7. Open up deployment2/README.md and go through it.
+Open up deployment1/README.md and go through it.
+
+## 5. Do deployment 2 
+
+Open up deployment2/README.md and go through it.
 
 ## SKIP Install prometheus & grafana (monitoring)
 
