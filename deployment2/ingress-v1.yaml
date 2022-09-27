@@ -18,3 +18,10 @@ spec:
             name: my-app-v1
             port: 
               number: 80
+      - path: /metrics
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-v1
+            port: 
+              number: 8080

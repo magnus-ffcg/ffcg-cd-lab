@@ -37,29 +37,16 @@ Install tools inside the cluster with helm
 
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-helm install prometheus \
-    prometheus-community/prometheus \
-    --namespace=monitoring  \
-    --version=15.13.0
-```
 
-```bash
-helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
-helm install grafana grafana/grafana \
-    --namespace=monitoring \
-    --version=6.39.0 \
-    --set=adminUser=admin \
-    --set=adminPassword=admin \
-    --set=service.type=NodePort
+helm install monitoring prometheus-community/kube-prometheus-stack
 ```
 
 Access grafana:
 
-    minikube service grafana
+    minikube service monitoring-grafana
 
-Login with admin / admin
+Login with admin / prom-operator
 
 Add datasource under settings (bottom left):
 

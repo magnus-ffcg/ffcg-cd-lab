@@ -12,7 +12,7 @@ Test if the deployment was successful:
 
     minikube service my-app --url
 
-open a webbrowser with the same ip.
+open a webbrowser with the same ip. Once you are done you can type: ctrl-c
 
 It should say something like 2202-01-28T00:22:04+01:00 - Host: host-1, Version: v1.0.0
 You can now close the minikube service call
@@ -37,11 +37,11 @@ Once your pods are ready, you can switch the traffic to the new version by patch
 
     minikube kubectl -- patch service my-app -p '{"spec":{"selector":{"version":"v2.0.0"}}}'
 
-Test if the second deployment was successful:
+Test if the deployment was successful:
 
     minikube service my-app --url
 
-open a webbrowser with the same ip.
+open a webbrowser with the same ip. Once you are done you can type: ctrl-c
 
 In case you need to rollback to the previous version:
 

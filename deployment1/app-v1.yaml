@@ -1,3 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  podMetricsEndpoints:
+  - port: metrics
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -10,6 +21,9 @@ spec:
   - name: http
     port: 80
     targetPort: http
+  - name: metrics
+    port: 8080
+    targetPort: metrics
 
   # Note here that we match both the app and the version
   selector:
@@ -33,9 +47,6 @@ spec:
       labels:
         app: my-app
         version: v1.0.0
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9101"
     spec:
       containers:
       - name: my-app
@@ -45,6 +56,8 @@ spec:
           containerPort: 8080
         - name: probe
           containerPort: 8086
+        - name: metrics
+          containerPort: 9101
         env:
         - name: VERSION
           value: v1.0.0
