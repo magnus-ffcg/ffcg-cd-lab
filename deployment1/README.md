@@ -1,6 +1,6 @@
 # Deployment 1
 
-NOTE: When not installing monitoring PodMonitor is lacking. Disregard this and continue.
+NOTE: When not installing monitoring PodMonitor is lacking. Disregard this when its pops up later during "kubectl apply" steps deployment and continue to next step.
 
 First, deploy the first application:
 
