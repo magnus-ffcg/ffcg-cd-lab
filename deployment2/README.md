@@ -21,7 +21,7 @@ Go to the first terminal window, deploy version 2 of ingress:
     minikube kubectl -- apply -f ./ingress-v2.yaml
 
 Now you should see that the traffic is changing (in the 3rd terminal e.g curl)
-(can you edit the traffic so it becomes 80?)
+
 When you are happy, delete the ingress:
 
     minikube kubectl -- delete -f ./ingress-v2.yaml

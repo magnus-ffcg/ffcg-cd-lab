@@ -30,7 +30,6 @@ minikube start --kubernetes-version=v1.23.3 \
 minikube kubectl -- get po -A
 ```
 
-
 ## 3. Prep later deployments
 
 Open a new terminal window, write 
@@ -65,8 +64,15 @@ Open up deployment1/README.md and go through it.
 
 Open up deployment2/README.md and go through it.
 
-## SKIP Install prometheus & grafana (monitoring)
+## 6. What was the difference.
 
+Prep yourself for the question. 
+
+## SKIP BELOW!!!!!
+
+## Install prometheus & grafana (monitoring)
+
+This is not included in the lab.
 Install tools inside the cluster with helm
 
 ```bash

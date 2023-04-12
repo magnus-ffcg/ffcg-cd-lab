@@ -15,9 +15,9 @@ Test if the deployment was successful:
 open a webbrowser with the same ip. Once you are done you can type: ctrl-c
 
 It should say something like 2202-01-28T00:22:04+01:00 - Host: host-1, Version: v1.0.0
-You can now close the minikube service call
+You can now close the minikube service call, ctrl-c in the terminal
 
-(optional)To see the deployment in action, open a new terminal and run the following command:
+(optional) To see the deployment in action, open a new terminal and run the following command:
 
     minikube kubectl -- get pods -w
 
