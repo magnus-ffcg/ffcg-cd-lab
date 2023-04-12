@@ -1,10 +1,8 @@
 # Deployment 1
 
-First:
+NOTE: When not installing monitoring PodMonitor is lacking. Disregard this and continue.
 
-    cd deployment1:
-
-Deploy the first application:
+First, deploy the first application:
 
     minikube kubectl -- apply -f https://raw.githubusercontent.com/magnus-ffcg/ffcg-cd-lab/main/deployment1/app-v1.yaml
 
