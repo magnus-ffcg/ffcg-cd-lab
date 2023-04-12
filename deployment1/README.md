@@ -6,7 +6,7 @@ First:
 
 Deploy the first application:
 
-    minikube kubectl -- apply -f app-v1.yaml
+    minikube kubectl -- apply -f https://raw.githubusercontent.com/magnus-ffcg/ffcg-cd-lab/main/deployment1/app-v1.yaml
 
 Test if the deployment was successful:
 
@@ -23,7 +23,7 @@ You can now close the minikube service call, ctrl-c in the terminal
 
 Then deploy version 2 of the application:
     
-    minikube kubectl -- apply -f app-v2.yaml
+    minikube kubectl -- apply -f https://raw.githubusercontent.com/magnus-ffcg/ffcg-cd-lab/main/deployment1/app-v2.yaml
 
 Wait for all the version 2 pods to be running:
 
